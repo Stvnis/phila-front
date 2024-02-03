@@ -1,5 +1,8 @@
-import { createTheme } from "@mui/material";
+'use client'
+import { createTheme } from "@mui/material/styles";
 
 export const theme = createTheme({
-    
-}) 
+    typography: { 
+        // color: 'red',
+    },
+}); 
