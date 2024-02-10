@@ -1,4 +1,5 @@
 import type { StorybookConfig } from '@storybook/nextjs';
+import path from 'path'
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
@@ -7,7 +8,8 @@ const config: StorybookConfig = {
     '@storybook/addon-essentials',
     '@storybook/addon-onboarding',
     '@storybook/addon-interactions',
-    '@storybook/addon-themes'
+    '@storybook/addon-themes',
+    '@storybook/themes'
   ],
   framework: {
     name: '@storybook/nextjs',
@@ -16,5 +18,17 @@ const config: StorybookConfig = {
   docs: {
     autodocs: 'tag',
   },
+  webpackFinal: async (config, { configType }) => {
+    config.resolve.modules = [path.resolve(__dirname, ".."), "node_modules"];
+
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      "@phila-front": path.resolve(__dirname, "../src"),
+    };
+
+    return config;
+  },
 };
 export default config;
+
+

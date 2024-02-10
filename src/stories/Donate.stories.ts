@@ -6,7 +6,7 @@ const meta = {
     title: 'Sections/Donate',
     component: Donate,
     parameters: {
-      layout: 'centered',
+    //   layout: 'centered',
     },
     tags: ['autodocs'],
     // argTypes: {
