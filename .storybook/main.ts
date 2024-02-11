@@ -18,15 +18,18 @@ const config: StorybookConfig = {
   docs: {
     autodocs: 'tag',
   },
-  webpackFinal: async (config, { configType }) => {
-    config.resolve.modules = [path.resolve(__dirname, ".."), "node_modules"];
-
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      "@phila-front": path.resolve(__dirname, "../src"),
+  webpackFinal: async (config) => {
+    return {
+      ...config,
+      resolve: {
+        ...config.resolve,
+        modules: [path.resolve(__dirname, ".."), "node_modules"],
+        alias: {
+          ...config.resolve?.alias,
+          "@phila-front": path.resolve(__dirname, "../src"),
+        }
+      }
     };
-
-    return config;
   },
 };
 export default config;
