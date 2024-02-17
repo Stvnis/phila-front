@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export const Donate = () => {
   return (
-    <Container>
+    <Container data-testid="donate">
       <Grid container>
         <Grid item xs={6}>
           <Typography>НАБЛИЖАЙ ПЕРЕМОГУ</Typography>
