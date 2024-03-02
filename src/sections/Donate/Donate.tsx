@@ -15,7 +15,7 @@ export interface DonateProps {
 
 export const Donate: FC<DonateProps>=({title,slogan,text,button})=>{
     return (
-        <Container>
+        <Container data-testid="donate">
             <Grid container>
                 <Grid item xs={6}>
                     <Slogan>{slogan}</Slogan>

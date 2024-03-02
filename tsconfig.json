@@ -19,6 +19,12 @@
     "noImplicitAny": true,
     "noImplicitThis": true,
     "strictNullChecks": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "preserveConstEnums": true,
+    "useDefineForClassFields": true,
+    "experimentalDecorators": true,
+    "composite": true,
     "plugins": [
       {
         "name": "next"

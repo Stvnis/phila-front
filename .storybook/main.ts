@@ -1,5 +1,5 @@
 import type { StorybookConfig } from '@storybook/nextjs';
-import path from 'path'
+import path from 'path';
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
@@ -9,11 +9,16 @@ const config: StorybookConfig = {
     '@storybook/addon-onboarding',
     '@storybook/addon-interactions',
     '@storybook/addon-themes',
-    '@storybook/themes'
+    '@storybook/themes',
+    '@storybook/addon-viewport',
   ],
   framework: {
     name: '@storybook/nextjs',
-    options: {},
+    options: {
+      builder: {
+        useSWC: true,
+      },
+    },
   },
   docs: {
     autodocs: 'tag',
@@ -26,15 +31,14 @@ const config: StorybookConfig = {
       ...config,
       resolve: {
         ...config.resolve,
-        modules: [path.resolve(__dirname, ".."), "node_modules"],
+        modules: [path.resolve(__dirname, '..'), 'node_modules'],
         alias: {
           ...config.resolve?.alias,
-          "@phila-front": path.resolve(__dirname, "../src"),
-        }
-      }
+          '@phila-front': path.resolve(__dirname, '../src'),
+        },
+      },
     };
   },
 };
+
 export default config;
-
-
