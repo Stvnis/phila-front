@@ -61,9 +61,9 @@ export default function Home() {
       <Button variant="contained" color="secondary">
         Next
       </Button>
-      {sectionsData.map(({ type, props })=> {
+      {sectionsData.map(({ type, props }, index)=> {
         const Component = sectionMap[type];
-        return <Component {...props} />
+        return <Component key={index} {...props} />
       })}
     </main>
   );
