@@ -10,9 +10,8 @@ const meta = {
   tags: ['autodocs'],
   argTypes: {
     title: { control: 'text' },
-    slogan: { control: 'text' },
     text: { control: 'text' },
-    images: { control: 'object' },
+    image: { control: 'text' },
     button: {
       title: { control: 'text' },
       link: { control: 'text' },
@@ -25,13 +24,12 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    title: 'slogan1',
-    slogan: 'slogan1',
-    text: 'text1',
+    title: 'title',
+    text: 'text',
     button: {
       title: 'string',
       link: '/',
     },
-    images: [],
+    image: '',
   },
 };

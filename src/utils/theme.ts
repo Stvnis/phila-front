@@ -15,6 +15,15 @@ export const theme = createTheme({
       main: '#262626',
     },
   },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1288,
+      xl: 1536,
+    },
+  },
   typography: {
     fontFamily: [
       EUkraine.style.fontFamily,

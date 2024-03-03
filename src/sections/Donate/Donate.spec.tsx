@@ -5,18 +5,17 @@ import { Donate } from './Donate';
 describe('Donate', () => {
   test('Should render Donate', () => {
     const dom = render(
-      <Donate title="title"
-        slogan="slogan1"
+      <Donate
+        title="title"
         text="text"
         button={{
           title: 'string',
           link: '/',
         }}
-        images={[]}
-      />
+        image=""
+      />,
     );
 
     expect(dom.getByTestId('donate')).toBeDefined();
-    expect(dom.getByText('slogan1')).toBeDefined();
   });
 });

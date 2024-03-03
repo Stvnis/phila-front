@@ -1,35 +1,39 @@
-import { FC } from 'react';
-import { Button, Container, Grid, Typography } from '@mui/material';
-import { GalleryImage, Slogan } from '../../components';
+import React, { FC } from 'react';
+import { Button, Chip, Container, Grid, Stack } from '@mui/material';
+import Image from 'next/image';
+import * as S from './Donate.styles';
 
 export interface DonateProps {
-  title: string,
-  slogan: string,
-  text: string,
+  title: string;
+  text: string;
   button: {
-    title: string,
-    link: string
-  },
-  images: string[],
+    title: string;
+    link: string;
+  };
+  image: string;
+  backgroundColor?: string;
 }
 
-export const Donate: FC<DonateProps> = ({ title, slogan, text, button }) => {
+export const Donate: FC<DonateProps> = ({ title, text, button, image, backgroundColor }) => {
   return (
-    <Container data-testid="donate">
-      <Grid container>
-        <Grid item xs={6}>
-          <Slogan>{slogan}</Slogan>
-          <Typography>{title}</Typography>
-          <Typography>{text}</Typography>
-          <Button variant="contained">{button.title}</Button>
+    <S.Wrap style={{ backgroundColor }}>
+      <Container data-testid="donate">
+        <Grid container>
+          <Grid item xs={12}>
+            <S.ContentWrap>
+              <S.Title variant="h3">{title}</S.Title>
+              <S.Description>{text}</S.Description>
+              <Stack flexDirection="row" justifyContent="center">
+                <Chip label="Наступна трансляція через: 4 дні" />
+                <Button variant="contained">{button.title}</Button>
+              </Stack>
+            </S.ContentWrap>
+          </Grid>
+          <Grid item xs={12}>
+            <Image src={image} alt="preview" width={1240} height={530} />
+          </Grid>
         </Grid>
-        <Grid item xs={6}>
-          <GalleryImage
-            src="https://www.reconnectwithnature.org/getmedia/bbf87a4f-2bb7-48ca-b948-8ebff37dc835/Great-horned-owl-Shutterstock_1.jpg?width=1500&height=1084&ext=.jpg"
-            alt="preview" />
-
-        </Grid>
-      </Grid>
-    </Container>
+      </Container>
+    </S.Wrap>
   );
 };
