@@ -2,3 +2,4 @@ node_modules
 coverage
 .next
 .idea
+tsconfig.tsbuildinfo

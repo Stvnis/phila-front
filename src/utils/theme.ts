@@ -1,19 +1,23 @@
 'use client';
 import { createTheme } from '@mui/material/styles';
-import { EUkraine } from '@phila-front/assets/fonts';
-
+import { montserrat } from '@phila-front/assets/fonts';
 
 export const theme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      main: '#FFDC61',
-      dark: '#ffedae',
-      light: '#ffdb65',
+      main: '#FFD177',
+      dark: '#FFEDAE',
+      light: '#FFDB65',
     },
     secondary: {
-      main: '#262626',
+      main: '#FFFFFF',
     },
+    text: {
+      primary: '#1D1D1C',
+      secondary: '#1D1D1C',
+    },
+    divider: '#1D1D1C',
   },
   breakpoints: {
     values: {
@@ -25,11 +29,7 @@ export const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: [
-      EUkraine.style.fontFamily,
-      'sans-serif',
-    ].join(','),
-
+    fontFamily: [montserrat.style.fontFamily, 'sans-serif'].join(','),
   },
   components: {
     MuiButton: {
@@ -47,4 +47,4 @@ export const theme = createTheme({
       },
     },
   },
-}); 
+});

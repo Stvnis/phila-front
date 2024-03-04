@@ -1,14 +1,15 @@
 import type { Decorator, Preview } from '@storybook/react';
 import { ThemeProvider, CssBaseline } from '@mui/material';
 import { withThemeFromJSXProvider } from '@storybook/addon-themes';
-import { theme } from '../src/utils';
+// @ts-ignore:next-line
+import { theme } from '@phila-front/utils';
 
 const materialDecorator = withThemeFromJSXProvider({
   GlobalStyles: CssBaseline,
   Provider: ThemeProvider,
   themes: {
     light: theme,
-    dark: theme,
+    // dark: theme,
   },
   defaultTheme: 'light',
 }) as Decorator;
@@ -24,9 +25,7 @@ const preview: Preview = {
     },
   },
 
-  decorators: [
-    materialDecorator,
-  ],
+  decorators: [materialDecorator],
 };
 
 export default preview;
