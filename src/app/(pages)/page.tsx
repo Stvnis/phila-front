@@ -1,66 +1,43 @@
 import { Button, Typography } from '@mui/material';
-import { Donate, DonateProps } from '@phila-front/sections';
+import { Donate, DonateProps, Subscribe, SubscribeProps } from '@phila-front/sections';
+import { donate, subscribe } from '@phila-front/mocks';
 
 const sectionMap = {
   donate: Donate,
-}
+  subscribe: Subscribe,
+};
 
 interface DonateData {
-  type: 'donate',
-  props: DonateProps
+  type: 'donate';
+  props: DonateProps;
 }
 
-const sectionsData: DonateData[] = [
+interface SubscribeData {
+  type: 'subscribe';
+  props: SubscribeProps;
+}
+
+const sectionsData: (DonateData | SubscribeData)[] = [
   {
-    type:"donate",
-    props: {
-      title:"Волонтерство та допомога123",
-      text:"Почни змінювати себе в кращу сторону разом з християнською церквою “Філадельфія” змінювати себе в кращу сторону разом з християнською церквою “Філадельфія” змінювати себе в кращу сторону разом з християнською церквою “Філадельфія” Приєднуйся до нас та наближай перемогу!",
-      button:{
-        title:"Допомогти",
-        link:"#",
-      },
-      image: 'https://www.reconnectwithnature.org/getmedia/bbf87a4f-2bb7-48ca-b948-8ebff37dc835/Great-horned-owl-Shutterstock_1.jpg?width=1500&height=1084&ext=.jpg',
-    }
+    type: 'donate',
+    props: donate,
   },
   {
-    type:"donate",
-    props: {
-      title:"Волонтерство та допомога123",
-      text:"Почни змінювати себе в кращу сторону разом з християнською церквою “Філадельфія” змінювати себе в кращу сторону разом з християнською церквою “Філадельфія” змінювати себе в кращу сторону разом з християнською церквою “Філадельфія” Приєднуйся до нас та наближай перемогу!",
-      button:{
-        title:"Допомогти",
-        link:"#",
-      },
-      image: 'https://www.reconnectwithnature.org/getmedia/bbf87a4f-2bb7-48ca-b948-8ebff37dc835/Great-horned-owl-Shutterstock_1.jpg?width=1500&height=1084&ext=.jpg',
-    }
+    type: 'subscribe',
+    props: subscribe,
   },
-  {
-    type:"donate",
-    props: {
-      title:"Волонтерство та допомога123",
-      text:"Почни змінювати себе в кращу сторону разом з християнською церквою “Філадельфія” змінювати себе в кращу сторону разом з християнською церквою “Філадельфія” змінювати себе в кращу сторону разом з християнською церквою “Філадельфія” Приєднуйся до нас та наближай перемогу!",
-      button:{
-        title:"Допомогти",
-        link:"#",
-      },
-      image: 'https://www.reconnectwithnature.org/getmedia/bbf87a4f-2bb7-48ca-b948-8ebff37dc835/Great-horned-owl-Shutterstock_1.jpg?width=1500&height=1084&ext=.jpg',
-    }
-  }
-]
+];
 
 export default function Home() {
   return (
     <main>
-      <Typography>
-        Homepage
-      </Typography>
+      <Typography>Homepage</Typography>
       <Button variant="contained" color="secondary">
         Next
       </Button>
-      {sectionsData.map(({ type, props }, index)=> {
+      {sectionsData.map(({ type, props }, index) => {
         const Component = sectionMap[type];
-        return <Component key={index} {...props} />
+        return <Component key={index} {...props} />;
       })}
     </main>
   );

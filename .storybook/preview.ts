@@ -9,7 +9,7 @@ const materialDecorator = withThemeFromJSXProvider({
   Provider: ThemeProvider,
   themes: {
     light: theme,
-    // dark: theme,
+    dark: theme,
   },
   defaultTheme: 'light',
 }) as Decorator;
@@ -24,7 +24,6 @@ const preview: Preview = {
       },
     },
   },
-
   decorators: [materialDecorator],
 };
 

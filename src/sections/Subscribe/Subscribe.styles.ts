@@ -3,18 +3,24 @@ import { Box, styled, Typography } from '@mui/material';
 import NextImage from 'next/image';
 
 export const Wrap = styled(Box)(({ theme }) => ({
-  backgroundColor: theme.palette.primary.main,
+  backgroundColor: theme.palette.common.white,
   padding: `${theme.spacing(10)} 0`,
 }));
 export const ContentWrap = styled(Box)(({ theme }) => ({
-  maxWidth: theme.spacing(70),
-  padding: theme.spacing(3),
+  paddingBottom: theme.spacing(10),
+  maxWidth: theme.spacing(92.25),
+  margin: 'auto',
 }));
-export const Title = styled(Typography)(({ theme }) => ({
+export const Title = styled(Typography)(() => ({
+  textAlign: 'center',
   fontWeight: 600,
-  marginBottom: theme.spacing(3),
 }));
 export const Description = styled(Typography)(() => ({
+  textAlign: 'center',
+  fontWeight: 500,
+}));
+export const Translation = styled(Typography)(() => ({
+  textAlign: 'center',
   fontWeight: 500,
 }));
 export const Image = styled(NextImage)(({ theme }) => ({
