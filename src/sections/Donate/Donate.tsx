@@ -21,7 +21,7 @@ export const Donate: FC<DonateProps> = ({ title, text, button, image, background
     <S.Wrap style={{ backgroundColor }}>
       <Container data-testid="donate">
         <Grid container>
-          <Grid item xs={7}>
+          <Grid item md={7}>
             <S.ContentWrap>
               <Stack spacing={6}>
                 <Box>
@@ -37,7 +37,7 @@ export const Donate: FC<DonateProps> = ({ title, text, button, image, background
               </Stack>
             </S.ContentWrap>
           </Grid>
-          <Grid item xs={5}>
+          <Grid item md={5}>
             <S.Image src={image.url} alt={image.alt} width={1240} height={530} />
           </Grid>
         </Grid>
