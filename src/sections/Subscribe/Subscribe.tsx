@@ -1,5 +1,7 @@
 import React, { FC } from 'react';
 import { Button, Container, Grid, Stack } from '@mui/material';
+import { SectionWrapper } from '@phila-front/components';
+import { Image } from '@phila-front/types';
 import * as S from './Subscribe.styles';
 
 export interface SubscribeProps {
@@ -9,16 +11,13 @@ export interface SubscribeProps {
     title: string;
     link: string;
   };
-  image: {
-    url: string;
-    alt: string;
-  };
+  image: Image;
   backgroundColor?: string;
 }
 
 export const Subscribe: FC<SubscribeProps> = ({ title, text, button, image, backgroundColor }) => {
   return (
-    <S.Wrap style={{ backgroundColor }}>
+    <SectionWrapper backgroundColor={backgroundColor}>
       <Container data-testid="subscribe">
         <Grid container>
           <Grid item xs={12}>
@@ -42,6 +41,6 @@ export const Subscribe: FC<SubscribeProps> = ({ title, text, button, image, back
           </Grid>
         </Grid>
       </Container>
-    </S.Wrap>
+    </SectionWrapper>
   );
 };

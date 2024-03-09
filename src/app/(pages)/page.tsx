@@ -1,10 +1,11 @@
 import { Button, Typography } from '@mui/material';
-import { Donate, DonateProps, Subscribe, SubscribeProps } from '@phila-front/sections';
-import { donate, subscribe } from '@phila-front/mocks';
+import { Donate, DonateProps, Subscribe, SubscribeProps, Blog, BlogProps } from '@phila-front/sections';
+import { donate, subscribe, blog } from '@phila-front/mocks';
 
 const sectionMap = {
   donate: Donate,
   subscribe: Subscribe,
+  blog: Blog,
 };
 
 interface DonateData {
@@ -17,7 +18,16 @@ interface SubscribeData {
   props: SubscribeProps;
 }
 
-const sectionsData: (DonateData | SubscribeData)[] = [
+interface BlogData {
+  type: 'blog';
+  props: BlogProps;
+}
+
+const sectionsData: (DonateData | SubscribeData | BlogData)[] = [
+  {
+    type: 'blog',
+    props: blog,
+  },
   {
     type: 'donate',
     props: donate,

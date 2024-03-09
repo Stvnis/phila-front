@@ -2,10 +2,6 @@
 import { Box, styled, Typography } from '@mui/material';
 import NextImage from 'next/image';
 
-export const Wrap = styled(Box)(({ theme }) => ({
-  backgroundColor: theme.palette.common.white,
-  padding: `${theme.spacing(10)} 0`,
-}));
 export const ContentWrap = styled(Box)(({ theme }) => ({
   paddingBottom: theme.spacing(10),
   maxWidth: theme.spacing(92.25),
