@@ -17,6 +17,10 @@ export const theme = createTheme({
       primary: '#1D1D1C',
       secondary: '#1D1D1C',
     },
+    background: {
+      default: '#FFFFFF',
+      paper: '#FBFBFB',
+    },
     divider: '#1D1D1C',
   },
   breakpoints: {
@@ -44,6 +48,15 @@ export const theme = createTheme({
           // height: 48,
           // padding: '0 30px',
         },
+
+        text: {
+          color: '#f4a227',
+          fontWeight: 500,
+          letterSpacing: -0.9,
+          textTransform: 'none',
+          fontSize: 18,
+          transition: '0.2s all ease',
+        }
       },
     },
   },
