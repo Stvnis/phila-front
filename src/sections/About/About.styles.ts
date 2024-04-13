@@ -1,18 +1,17 @@
 'use client';
 import { Box, Typography, styled } from '@mui/material';
-import { theme } from '@phila-front/utils';
 
-export const Title = styled(Typography)(({ theme }) => ({
+export const Title = styled(Typography)(() => ({
   fontWeight: 600,
   letterSpacing: -2.8,
 }));
 
-export const Text = styled(Typography)(({ theme }) => ({
+export const Text = styled(Typography)(() => ({
   fontWeight: 500,
   opacity: 0.6,
 }));
 
-export const PrimaryImage = styled('img')(({ theme }) => ({
+export const PrimaryImage = styled('img')(() => ({
   maxHeight: 368,
   maxWidth: 596,
   borderRadius: 12,
@@ -21,7 +20,7 @@ export const PrimaryImage = styled('img')(({ theme }) => ({
   flex: 1,
 }));
 
-export const SecondaryImage = styled('img')(({ theme }) => ({
+export const SecondaryImage = styled('img')(() => ({
   maxHeight: 368,
   maxWidth: 298,
   borderRadius: 12,

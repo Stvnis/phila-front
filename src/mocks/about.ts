@@ -7,9 +7,19 @@ export const about: AboutProps = {
     title: 'Детальніше',
     link: '/',
   },
-  image: {
-    url: 'https://www.reconnectwithnature.org/getmedia/bbf87a4f-2bb7-48ca-b948-8ebff37dc835/Great-horned-owl-Shutterstock_1.jpg?width=1500&height=1084&ext=.jpg',
-    alt: 'donate',
-  },
+  images: [
+    {
+      url: 'https://stvnis.github.io/assets/about-pic1.jpg',
+      alt: 'donate',
+    },
+    {
+      url: 'https://stvnis.github.io/assets/about-pic2.png',
+      alt: 'donate',
+    },
+    {
+      url: 'https://stvnis.github.io/assets/about-pic3.jpg',
+      alt: 'donate',
+    }
+  ],
   // backgroundColor: '#FFD177',
 };

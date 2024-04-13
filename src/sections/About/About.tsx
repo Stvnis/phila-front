@@ -14,29 +14,34 @@ export interface AboutProps {
     link: string;
   };
   backgroundColor?: string;
-  image: Image;
+  images: Image[];
 }
 
-export const About: FC<AboutProps> = ({ title, text, button, image }) => {
+export const About: FC<AboutProps> = ({ title, text, button, images, backgroundColor }) => {
   const theme = useTheme();
   return (
-    <SectionWrapper>
+    <SectionWrapper backgroundColor={backgroundColor || theme.palette.common.white}>
       <Container>
         <Grid container gap={10}>
-          <Grid container wrap='nowrap' gap={7.5}>
-            <Grid item xs={4}>
-              <S.Title variant="h3">{title}</S.Title>
+          <Grid container spacing={3.75}>
+            <Grid item md={5} xs={12}>
+              <S.Title variant="h2">{title}</S.Title>
             </Grid>
-            <Grid item xs={8} display={'flex'} direction={'column'} justifyContent={'space-between'} alignItems={'start'}>
+            <Grid item md={7} xs={12} display={'flex'} direction={'column'} justifyContent={'space-between'} alignItems={'start'}>
               <S.Text>{text}</S.Text>
               <Button variant='text' endIcon={<EastIcon />}>{button.title}</Button>
             </Grid>
           </Grid>
 
-          <Grid container direction="row" justifyContent="space-between" gap={3}>
-            <S.PrimaryImage alt="Image" src="https://stvnis.github.io/assets/about-pic1.jpg" />
-            <S.SecondaryImage alt="Image" src="https://stvnis.github.io/assets/about-pic2.png" />
-            <S.SecondaryImage alt="Image" src="https://stvnis.github.io/assets/about-pic3.jpg" />
+          <Grid container direction="row" justifyContent="space-between" spacing={1.5}>
+            {
+              images.map((image, index)=>{
+                if (index === 0) {
+                  return <S.PrimaryImage key={index} alt={image.alt} src={image.url} />
+                }
+                return <S.SecondaryImage key={index} alt={image.alt} src={image.url} />              
+              })
+            }
           </Grid>
         </Grid>
       </Container>
