@@ -1,6 +1,6 @@
 import { Button, Typography } from '@mui/material';
 import { About, AboutProps, Donate, DonateProps, Subscribe, SubscribeProps, Blog, BlogProps } from '@phila-front/sections';
-import { donate, subscribe, blog, about } from '@phila-front/mocks';
+import { donate, subscribe, blog, about, volunteer } from '@phila-front/mocks';
 
 const sectionMap = {
   about: About,
@@ -38,6 +38,10 @@ const sectionsData: (AboutData | DonateData | SubscribeData | BlogData)[] = [
   {
     type: 'blog',
     props: blog,
+  },
+  {
+    type: 'about',
+    props: volunteer,
   },
   {
     type: 'donate',

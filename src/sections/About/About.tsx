@@ -9,7 +9,7 @@ import * as S from './About.styles';
 export interface AboutProps {
   title: string;
   text: string;
-  button: {
+  button?: {
     title: string;
     link: string;
   };
@@ -29,7 +29,7 @@ export const About: FC<AboutProps> = ({ title, text, button, images, backgroundC
             </Grid>
             <Grid item md={7} xs={12} display={'flex'} direction={'column'} justifyContent={'space-between'} alignItems={'start'}>
               <S.Text>{text}</S.Text>
-              <Button variant='text' endIcon={<EastIcon />}>{button.title}</Button>
+              {!!button && <Button variant='text' endIcon={<EastIcon />}>{button.title}</Button>}
             </Grid>
           </Grid>
 
@@ -39,7 +39,7 @@ export const About: FC<AboutProps> = ({ title, text, button, images, backgroundC
                 if (index === 0) {
                   return <S.PrimaryImage key={index} alt={image.alt} src={image.url} />
                 }
-                return <S.SecondaryImage key={index} alt={image.alt} src={image.url} />              
+                  return <S.SecondaryImage key={index} alt={image.alt} src={image.url} />              
               })
             }
           </Grid>
