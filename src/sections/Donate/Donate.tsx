@@ -1,5 +1,6 @@
 'use client';
 import React, { FC } from 'react';
+import Link from 'next/link';
 import { Box, Button, Container, Grid, Stack, useTheme } from '@mui/material';
 import { SectionWrapper } from '@phila-front/components';
 import { Image } from '@phila-front/types';
@@ -32,7 +33,7 @@ export const Donate: FC<DonateProps> = ({ title, text, button, image, background
                 </Box>
 
                 <Box>
-                  <Button variant="contained" color="secondary">
+                  <Button variant="contained" color="secondary" component={Link} href={button.link}>
                     {button.title}
                   </Button>
                 </Box>
