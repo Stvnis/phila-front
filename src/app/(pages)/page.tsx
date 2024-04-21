@@ -1,6 +1,14 @@
 import { Button, Typography } from '@mui/material';
-import { Donate, DonateProps, Subscribe, SubscribeProps, Blog, BlogProps } from '@phila-front/sections';
+import {
+  Donate,
+  DonateProps,
+  Subscribe,
+  SubscribeProps,
+  Blog,
+  BlogProps,
+} from '@phila-front/sections';
 import { donate, subscribe, blog } from '@phila-front/mocks';
+import { Footer } from '@phila-front/components';
 
 const sectionMap = {
   donate: Donate,
@@ -49,6 +57,7 @@ export default function Home() {
         const Component = sectionMap[type];
         return <Component key={index} {...props} />;
       })}
+      <Footer />
     </main>
   );
 }
