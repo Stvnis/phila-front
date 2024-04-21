@@ -6,9 +6,9 @@ import {
   SubscribeProps,
   Blog,
   BlogProps,
+  Footer,
 } from '@phila-front/sections';
 import { donate, subscribe, blog } from '@phila-front/mocks';
-import { Footer } from '@phila-front/components';
 
 const sectionMap = {
   donate: Donate,
